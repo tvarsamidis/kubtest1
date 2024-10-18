@@ -11,8 +11,8 @@ spec:
   - name: prometheus
     image: gianniskl/prometheus
     ports:
-    - containerPort: 8080
+      - containerPort: 8080
   - name: nginx
     image: nginx
-    - containerPort: 80
-    
+    ports:
+      - containerPort: 80
