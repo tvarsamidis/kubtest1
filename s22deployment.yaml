@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-proxy-deploy
+  namespace: k8slab
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: http-proxy
+      env: pro
+  template:
+    metadata:
+      labels:
+        app: http-proxy
+        env: pro
+    spec:
+      containers:
+      - image: traefik:v2.0
+        name: proxy-container
+      
